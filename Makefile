@@ -6,14 +6,14 @@
 #    By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 12:36:11 by tde-souz          #+#    #+#              #
-#    Updated: 2025/06/14 12:43:44 by tde-souz         ###   ########.fr        #
+#    Updated: 2025/06/14 12:50:01 by tde-souz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
 CFLAGS := -Wall -Wextra -Werror
 CC := gcc
-INCLUDES := include/
+INCLUDES := -I include/
 
 SRC_FOLDER := src/
 OBJ_FOLDER := obj/
