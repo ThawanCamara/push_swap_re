@@ -6,12 +6,12 @@
 #    By: tde-souz <tde-souz@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/14 12:36:11 by tde-souz          #+#    #+#              #
-#    Updated: 2025/06/14 12:50:01 by tde-souz         ###   ########.fr        #
+#    Updated: 2025/06/17 20:58:42 by tde-souz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g
 CC := gcc
 INCLUDES := -I include/
 
@@ -25,7 +25,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${INCLUDES} ${OBJS} -o ${NAME}
-	@echo "\n${NAME} is \033[38;5;10mREADY!\033[0m"
+	@echo "${NAME} is \033[38;5;10mREADY!\033[0m"
 
 ${OBJ_FOLDER}%.o: ${SRC_FOLDER}%.c
 	@mkdir -p $(dir $@)
@@ -40,4 +40,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+run: all
+	@./push_swap $(shell seq -30 30 | shuf -n 6)
+
+.PHONY: all clean fclean re run
